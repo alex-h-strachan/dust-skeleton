@@ -1,0 +1,26 @@
+{
+  "extends": "airbnb",
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true
+  },
+  "rules": {
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.test.{js,jsx}"]}],
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "never"
+      }
+    ]
+  },
+  "settings": {
+    "import/resolver": {
+      "webpack": { "config": "./webpack/base.js" }
+    }
+  }
+}
