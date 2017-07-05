@@ -5,6 +5,7 @@ const nodeExternals = require('webpack-node-externals');
 module.exports = {
   entry: {
     app: './src/app.js',
+    styles: './src/styles/styles.scss',
   },
   target: 'node',
   externals: [nodeExternals()],
@@ -15,8 +16,8 @@ module.exports = {
   module: {
     rules: [
       { enforce: 'pre', test: /\.jsx?$/, use: ['eslint-loader'] },
-      { test: /\.dust$/, use: ['dust-loader'] },
-      { test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader'] },
+      { test: /\.dust$/, use: [{ loader: 'dust-loader', options: { rootDir: 'src/views/partials' } }] },
+      { test: /\.scss$/, use: ['file-loader?name=[name].css', 'sass-loader'] },
     ],
   },
   resolve: {

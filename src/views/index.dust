@@ -1,1 +1,3 @@
-<div> Hello {name}! You have {count} new messages. </div>
+{>"styles"/}
+{>"header"/}
+<div> Hello {name}! You're on the login page </div>
